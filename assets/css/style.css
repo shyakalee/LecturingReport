@@ -1,0 +1,23 @@
+/* ----------- common ----------- */
+body{margin-top:40px;}
+.navbar{background:#e6e5e5;}
+.navbar-brand{font-size:25px;}
+ul.navbar-right{margin:0;}
+.icon-bar{background-color:#fff;}
+.navbar-right{margin:0.7% 0.5% 0 0.5%;}
+.header-text{margin-top:0;}
+
+/* ------------ login ---------- */
+.login-container{margin:0.5% 0;}
+.login-form{background:#e6e5e5;box-shadow: 0 0 5px 2px rgba(0,0,0,.35);}
+.login-form form{padding:1% 0;}
+
+/* -------- dashboard -------- */
+.dash-section{padding-top:2%;}
+.box-shadow{box-shadow: 0 0 5px 2px rgba(0,0,0,.35);}
+.form-box{margin:1% 0;}
+.img-box{width:8%;}
+.img-profile{width:16%;}
+img.profile{width: 50%;margin:auto;}
+
+.gly1{font-size:25px;}
