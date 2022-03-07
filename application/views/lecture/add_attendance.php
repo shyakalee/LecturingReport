@@ -47,6 +47,7 @@
 										if(count($students)>0){
 											$i=1;
 											foreach($students as $row_le){ ?>
+											
 												<tr>
 													<td><?php  echo $i++ ?></td>
                                                     <td><?php  echo $row_le->reg_number ?></td>

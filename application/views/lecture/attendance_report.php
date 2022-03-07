@@ -46,8 +46,8 @@
 
 											<tr>
 													<td><a href="#" class="badge"></a><?php  echo $i++ ?></a></td>
-                                                    <td><a href="<?php  echo $attende->attend_time ?>" class="badge"><?php  echo $attende->attend_time ?></a></td>
-													<td><a href="<?php  echo $attende->attend_time ?>" class="badge"><?php  echo $attende->total ?></a></td>
+                                                    <td><a href="#" class="badge"><?php  echo $attende->attend_time ?></a></td>
+													<td><a href="#" class="badge"><?php  echo $attende->total ?></a></td>
 												</tr> 
                                         <?php 	
                                         }

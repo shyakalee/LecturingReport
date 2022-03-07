@@ -63,7 +63,11 @@
 															<option value="0">Absent</option>
 															<option value="2">Late</option>
 														</select>
-														<input type="submit" name="save_attendance" value="send">
+
+													
+														<input type="submit" class="" name="save_attendance" value="send"> 
+														
+
                                                     <!-- <label class="block"><input type="radio" name="attendance[<?php echo $row_le->reg_number ?>]" value="A"> Present  </label>
                                                     <label class="block"><input type="radio" name="attendance[<?php echo $row_le->reg_number ?>]" value="B"> Absent </label>
                                                     <label class="block"><input type="radio" name="attendance[<?php echo $row_le->reg_number ?>]" value="C"> Late</label> -->

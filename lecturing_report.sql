@@ -89,7 +89,7 @@ CREATE TABLE `attendance` (
   `in_time` varchar(100) NOT NULL,
   `status` tinyint(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (1,'IPRC/229572','1','1','2022-03-06',1),(2,'IPRC/22F206','1','1','2022-03-06',0),(3,'IPRC/2218E1','2','1','2022-03-06',2),(4,'IPRC/229572','2','1','2022-03-06',0),(5,'IPRC/2218E1','2','1','2022-03-04',1);
+INSERT INTO `attendance` VALUES (1,'IPRC/229572','1','1','2022-03-06',1),(2,'IPRC/22F206','1','1','2022-03-06',0),(3,'IPRC/2218E1','2','1','2022-03-06',2),(4,'IPRC/229572','2','1','2022-03-06',0),(5,'IPRC/2218E1','2','1','2022-03-04',1),(6,'IPRC/22ED59','1','1','2022-03-07',0),(7,'IPRC/229572','1','1','2022-03-07',2);
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,7 +278,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'IPRC/22F6B3','shyaka','leonce','shyakalee@gmail.com','0788704082',3,1,'0788704082',1),(2,'IPRC/221025','kalisa','amani','kalisa@gmail.com','0788454755',1,1,'0788454755',0),(3,'IPRC/229572','Igihozo','divine','divine@bk.rw','0788704254',1,1,'0788704254',1),(4,'IPRC/22F4C1','Umutesi','carine','carine@gmail.com','07446578465',3,1,'07446578465',1),(5,'IPRC/22B005','Test ','Student','student@gmail.com','0784131541',4,1,'0784131541',1),(6,'IPRC/22F206','Uwimana','Agnes','uwimana@gmail.com','0788452025',1,3,'0788452025',1),(7,'IPRC/2218E1','Umuraza','Evelyne','evelyne@gmail.com','0788945123',1,3,'0788945123',1);
+INSERT INTO `student` VALUES (0,'IPRC/22ED59','Uwimana','Agnes','uwimana@gmail.com','0788452025',3,1,'0788452025',1),(1,'IPRC/22F6B3','shyaka','leonce','shyakalee@gmail.com','0788704082',3,1,'0788704082',1),(2,'IPRC/221025','kalisa','amani','kalisa@gmail.com','0788454755',1,1,'0788454755',0),(3,'IPRC/229572','Igihozo','divine','divine@bk.rw','0788704254',1,1,'0788704254',1),(4,'IPRC/22F4C1','Umutesi','carine','carine@gmail.com','07446578465',3,1,'07446578465',1),(5,'IPRC/22B005','Test ','Student','student@gmail.com','0784131541',4,1,'0784131541',1),(7,'IPRC/2218E1','Umuraza','Evelyne','evelyne@gmail.com','0788945123',1,3,'0788945123',1);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -291,4 +291,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-07 21:46:08
+-- Dump completed on 2022-03-07 23:58:06

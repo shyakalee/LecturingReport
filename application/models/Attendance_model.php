@@ -26,4 +26,15 @@ public function attendance_report_time() {
 						->result();
 }
 
+public function check_attendance_date() {
+	return $this->db->select('attendance.id,attendance.in_time as attend_time')
+						->from('attendance')
+						//->where('lecture.active',1)
+						//->join('depart','lecture.depart = depart.id')
+						//->order_by('attendance.in_time','desc')
+						//->group_by('in_time')
+						->get()
+						->result();
+}
+
 }
