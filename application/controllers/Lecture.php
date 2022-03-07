@@ -95,31 +95,12 @@ class Lecture extends CI_Controller{
 		$this->load->view('Lecture/add_attendance',$data);
 	}
 
-	public function process_attendance($id=''){
-
-		$reg_number = $this->input->post('reg_number');
-		$lecture_id = $this->input->post('lecture_id');
-		$depart = $this->input->post('depart');
-		$in_time = $this->input->post('in_time');
-		//$status = "1";
-
-		$att_data = array(
-			'id'=>'null', 
-			'reg_number'=>'1',
-			'lecture_id'=>'1',
-			'depart'=>'1',
-			'in_time'=>'1',
-			'status'=> '1');
-
-		if($this->us->save($att_data,$id)){
-			$this->session->set_flashdata('sms_good','Attendance Saved sucess !');
-		}else{
-			$this->session->set_flashdata('sms_bad','The Attendance failed to record !');
-		}
-		 //$this->session->set_flashdata('sms_good','Attendance Saved sucess !');
-		 redirect('Lecture/add_attendance');
-
+	public function attendance(){
+		$data['students'] = $this->us->all_students();
+		$this->load->view('Lecture/attendance',$data);
 	}
+
+
 
 
 

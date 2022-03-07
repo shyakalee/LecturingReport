@@ -40,6 +40,8 @@ class Lecture_model extends CI_Model {
 						->get()
 						->result();
 	}
+
+	//fetch students as per department registered
 	public function get_all_student(){
 		$led_depart = $this->session->userdata('TheDepart');
 		return $this->db->select('student.f_name,student.l_name,student.email,student.phone,student.level')
@@ -156,12 +158,15 @@ class Lecture_model extends CI_Model {
 		return $query_course->num_rows();
 	}
 
+	// additional functions defined ***********************
+
+	// function pass values to attendance studemts
 	public function all_students() {
-		//$led_depart = $this->session->userdata('TheDepart');
-		return $this->db->select('student.reg_number,student.f_name,student.l_name,student.email,depart.name,student.phone,student.level')
+		$led_depart = $this->session->userdata('TheDepart');
+		return $this->db->select('student.reg_number,student.f_name,student.l_name,student.email,depart.name,depart.id as depart,student.phone,student.level')
 						->from('student')
 						->join('depart', 'student.depart = depart.id')						
-						->where(['student.active'=>1])
+						->where(['student.active'=>1, 'student.depart'=>$led_depart])
 						->get()
 						->result();
 	}

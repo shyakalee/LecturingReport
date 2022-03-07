@@ -20,10 +20,11 @@
 		<div class="navbar-collapse collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="<?php echo base_url('Lecture')?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li><a href="<?php echo base_url('Lecture/add_attendance')?>"><span class="glyphicon glyphicon-list-alt"></span> Add Attendance</a></li>
 				<li><a href="<?php echo base_url('Lecture/lecturing_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Lecturing</a></li>
+				<li><a href="<?php echo base_url('Lecture/attendance')?>"><span class="glyphicon glyphicon-list-alt"></span> Add attendance</a></li>
 				<li><a href="<?php echo base_url('Lecture/course_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Courses</a></li>
 				<li><a href="<?php echo base_url('Lecture/student_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Students</a></li>
+				<li><a href="<?php echo base_url('attendance/attendance_report')?>"><span class="glyphicon glyphicon-list-alt"></span> Att. Report</a></li>
 				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $User_degree.' '.$fname; ?></a>
 					<ul class="dropdown-menu">
 						<li class="user-header text-center">
