@@ -15,25 +15,29 @@ class Attendance extends CI_Controller{
 
 	public function attendance(){
 		$data['students'] = $this->us->get_all_student();
-		$data['attended_date']=$this->us->check_attendance_date();
+		
+		$data['attended_date']=$this->us->check_attendance_date('2022-03-010','IPRC/229572');
 		$this->load->view('attendance/attendance',$data);
 	}
 
 	public function attendance_report(){
 		$data['attendes'] = $this->us->attendance_report_time();
+		$data['all_courses'] = $this->us->get_courses();
+		$data['all_attendes']=$this->us->get_attendes();
+				
 		$this->load->view('lecture/attendance_report',$data);
 	}
 
 	public function view_attendes(){
-		//$data['attendes'] = $this->us->attendance_report_time();
-		$this->load->view('lecture/view_attendes');
+		$time = $this->input->post('attendance_date');
+		//$course = $this->input->post('depart');
+		$all_time_data['dates']=$this->us->get_attendes_bydate($time);
+		//$all_time_data['course']=$this->input->post('depart');	
+			$this->load->view('lecture/results',$all_time_data);
 	}
 
 
-
-
 	public function add_attendance($id=''){
-
 		$reg_number = $this->input->post('reg_number');
 		$lecture_id = $this->input->post('lecture_id');
 		$depart = $this->input->post('depart');
