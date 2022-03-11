@@ -27,7 +27,7 @@
 							</div>
 						<?php endif; ?>
 						<div class="table-responsive table-full-width form-add-project">
-							<table class="table table-striped table-hover"> <!-- hover -->
+							<table class="table table-striped table-hover display" id="example"> <!-- hover -->
 								<thead>
 									<th>N<sup><u>o</u></sup></th>
 									<th>Reg number</th>

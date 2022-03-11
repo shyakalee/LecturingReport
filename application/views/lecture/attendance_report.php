@@ -35,7 +35,7 @@
 							</div>
 						<?php endif; ?>
 						<div class="table-responsive table-full-width form-add-project">
-							<table class="table table-striped table-hover"> <!-- hover -->
+							<table class="table table-striped table-hover" id=example> <!-- hover -->
 								<thead>
 									<th>N<sup><u>o</u></sup></th>
                                     <th>Date of Attendance</th>
@@ -97,14 +97,10 @@
 								</div>
 							</div>
 							
-							<button name="send_values" class="btn btn-info">Submit Datas</button>
-
-						
-						
-						
+							<button name="send_values" class="btn btn-info">Submit Datas</button><p></p>
 					
 						<div class="table-responsive table-full-width form-add-project">
-							<table class="table table-striped table-hover"> <!-- hover -->
+							<table class="table table-striped table-hover display"  id="example"> <!-- hover -->
 								<thead>
 									<th>N<sup><u>o</u></sup></th>
                                     <th>Reg number</th>
