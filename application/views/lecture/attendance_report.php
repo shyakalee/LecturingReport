@@ -40,8 +40,7 @@
 									<th>N<sup><u>o</u></sup></th>
                                     <th>Date of Attendance</th>
 									<th>Students</th>
-									
-
+								
 								</thead>
 								<tbody>
                                 <?php
@@ -50,10 +49,10 @@
 											foreach($attendes as $attende){ ?>
 
 											<tr>
-													<td><a href="#" class="badge"></a><?php  echo $i++ ?></a></td>
-                                                    <td><a href="#" class="badge"><?php  echo $attende->attend_time ?></a></td>
-													<td><a href="#" class="badge"><?php  echo $attende->total ?></a></td>
-												</tr> 
+												<td><a href="#" class="badge"></a><?php  echo $i++ ?></a></td>
+                                                <td><a href="#" class="badge"><?php  echo $attende->attend_time ?></a></td>
+												<td><a href="#" class="badge"><?php  echo $attende->total ?></a></td>
+											</tr> 
                                         <?php 	
                                         }
 									} 
@@ -63,7 +62,9 @@
 							</table>
                             
 						</div>
-                        <button class="btn btn-info hidden" name="add">Submit Attendance</button>
+							
+                        <button class="btn btn-info hidden <?php echo $class ?> " name="add">Submit Attendance</button>
+						
 					</div>
 
 
@@ -72,8 +73,7 @@
 					<!-- End of attendance submission form here -->
 
 					<div class="thumbnail box-shadow">
-						<h3>Query Students</h3>
-						
+						<h3>Query Students</h3>						
 
 						<form method="post" action="<?php echo base_url('attendance/view_attendes/') ?>" role="form">
 							<div class="form-group">
@@ -96,8 +96,10 @@
 									</div>
 								</div>
 							</div>
+
+												
+							<button name="send_values" class="btn btn-">Submit Datas</button><p></p>
 							
-							<button name="send_values" class="btn btn-info">Submit Datas</button><p></p>
 					
 						<div class="table-responsive table-full-width form-add-project">
 							<table class="table table-striped table-hover display"  id="example"> <!-- hover -->

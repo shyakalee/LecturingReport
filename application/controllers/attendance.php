@@ -15,8 +15,9 @@ class Attendance extends CI_Controller{
 
 	public function attendance(){
 		$data['students'] = $this->us->get_all_student();
-		
-		$data['attended_date']=$this->us->check_attendance_date('2022-03-010','IPRC/229572');
+		$reg_number='';
+		$in_time='';		
+		$data['attended_date']=$this->us->check_attendance_date('2022-03-17','IPRC/2256BA');
 		$this->load->view('attendance/attendance',$data);
 	}
 
@@ -51,19 +52,30 @@ class Attendance extends CI_Controller{
 			'in_time'=>$in_time,
 			'status'=>$status);
 
-		if($this->us->save($att_data,$id)){
-			$this->session->set_flashdata('sms_good','Attendance Saved sucess !');
-		}else{
-			$this->session->set_flashdata('sms_bad','the Attendance failed to record !');
-		}
+			//$check=$this->us->check_attendance_date($in_time);
+
+				// if($check==true) {				
+				// 	$this->session->set_flashdata('sms_bad','the Attendance Already taken..');
+				// } else {
+				// 	$this->session->set_flashdata('sms_good','Attendance Saved sucess !');
+		
+						if($this->us->save($att_data,$id)){
+							$this->session->set_flashdata('sms_good','Attendance Saved sucess !');
+						}else{
+							$this->session->set_flashdata('sms_bad','the Attendance failed to record !');
+						}
+					
+			// }
+
+			
+
+		
 		redirect('lecture/attendance');
 	}
 
 	public function check_attendance($reg_number) {
 		
 	}
-
-
 
 
 }

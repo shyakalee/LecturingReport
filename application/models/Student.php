@@ -19,7 +19,7 @@ class Student extends CI_Model {
 						->from('student')
 						->where('student.active',1)
 						->join('depart','student.depart = depart.id')
-						->order_by('student.id','desc')
+						//->order_by('student.id','desc')
 						->get()
 						->result();
 	}

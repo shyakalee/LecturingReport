@@ -32,7 +32,7 @@ class Add_student extends CI_Controller {
 		$phone = $this->input->post('phone');
 		$email = $this->input->post('email');
 		$level = $this->input->post('level');
-		$std_data = array('id'=>'null','reg_number'=>$reg_number,'f_name'=>$fname,'l_name'=>$lname,'email'=>$email,'phone'=>$phone,'depart'=>$depart,'level'=>$level,'password'=>$phone,'active'=>1);
+		$std_data = array('reg_number'=>$reg_number,'f_name'=>$fname,'l_name'=>$lname,'email'=>$email,'phone'=>$phone,'depart'=>$depart,'level'=>$level,'password'=>$phone,'active'=>1);
 		if($this->us->save($std_data,$id)){
 			$this->session->set_flashdata('sms_good','data saved well !');
 		}else{
