@@ -31,7 +31,7 @@ CREATE TABLE `admin` (
   `password` varchar(15) CHARACTER SET utf8 NOT NULL,
   `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (7,'asd','asd','jajajaden01@gmail.com','2342','2342',0),(8,'jksdfhdj','hjkhvfdg','jajajaden01@gmail.com','4564','4564',0),(11,'up','date','update@gmail.com','12345','12345',0),(17,'shyaka','leonce','shyakalee@gmail.com','123','123',1);
+INSERT INTO `admin` VALUES (7,'asd','asd','jajajaden01@gmail.com','2342','2342',0),(8,'jksdfhdj','hjkhvfdg','jajajaden01@gmail.com','4564','4564',0),(11,'up','date','update@gmail.com','12345','12345',0),(17,'shyaka','leonce','shyakalee@gmail.com','123','123',1),(18,'Administrator','Lanez','admin@admin.com','123','admin',1);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `attendance` (
   `in_time` varchar(100) NOT NULL,
   `status` tinyint(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (1,'IPRC/229572','1','1','2022-03-06',1),(2,'IPRC/22F206','1','1','2022-03-06',0),(3,'IPRC/2218E1','2','1','2022-03-06',2),(4,'IPRC/229572','2','1','2022-03-06',0),(5,'IPRC/2218E1','2','1','2022-03-04',1),(6,'IPRC/22ED59','1','1','2022-03-07',0),(7,'IPRC/229572','1','1','2022-03-07',2);
+INSERT INTO `attendance` VALUES (1,'IPRC/229211','1','1','2022-03-17',0),(2,'IPRC/224E65','1','1','2022-03-17',0),(3,'IPRC/2256BA','1','1','2022-03-17',2),(4,'IPRC/22434F','1','1','2022-03-17',2);
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +127,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1),(2,'Computer Graphic',10,4,2,1,1),(3,'GIS info',10,1,1,1,1),(4,'Web Design',10,1,1,2,1),(5,'Local Financial',10,1,3,2,1),(6,'Digital circuit',10,4,1,1,1),(7,'Database Management System',10,1,1,2,1),(8,'Test Git Course',15,4,1,1,1);
+INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1),(2,'Computer Graphic',10,4,2,1,1),(3,'GIS info',10,1,1,1,1),(4,'Web Design',10,1,1,2,1),(5,'Local Financial',10,1,3,2,1),(6,'Digital circuit',10,1,4,1,1),(7,'Database Management System',10,1,1,2,1),(8,'Test Git Course',15,1,4,4,1);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +215,7 @@ CREATE TABLE `lecture` (
 
 LOCK TABLES `lecture` WRITE;
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
-INSERT INTO `lecture` VALUES (1,'Mr','GAHAMANYI','Joseph','joseph@gmail.com','1234','1234','M',1,1),(2,'Prof','Ntaganda','Jean Marie','ntaganda@gmail.com','123','123','M',1,1),(3,'Mrs','koko','keke','koko@gmail.com','0788668','0788668','F',4,1),(4,'Mr','shyaka','leonce','shyakalee@gmail.com','0788704082','0788704082','M',2,1),(5,'Mr','test','test','kalisa@gmail.com','0788704082','0788704082','F',1,1);
+INSERT INTO `lecture` VALUES (1,'Mr','GAHAMANYI','Joseph','joseph@gmail.com','1234','1234','M',1,1),(2,'Prof','Ntaganda','Jean Marie','ntaganda@gmail.com','123','123','M',1,1),(3,'Mrs','koko','keke','koko@gmail.com','0788668','0788668','F',4,1),(4,'Mr','shyaka','leonce','shyakalee@gmail.com','0788704082','0788704082','M',4,1),(5,'Mr','test','test','kalisa@gmail.com','0788704082','0788704082','F',1,1);
 /*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,7 +237,7 @@ CREATE TABLE `lecturing` (
   `comment` varchar(500) CHARACTER SET utf8 NOT NULL,
   `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -246,7 +246,7 @@ CREATE TABLE `lecturing` (
 
 LOCK TABLES `lecturing` WRITE;
 /*!40000 ALTER TABLE `lecturing` DISABLE KEYS */;
-INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4);
+INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4),(5,1,2,7,'2022-03-16T13:45','3','Yigishije fresh kbsa, No porobleme','That\'s great',4);
 /*!40000 ALTER TABLE `lecturing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +269,7 @@ CREATE TABLE `student` (
   `password` varchar(30) CHARACTER SET utf8 NOT NULL,
   `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +278,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (0,'IPRC/22ED59','Uwimana','Agnes','uwimana@gmail.com','0788452025',3,1,'0788452025',1),(1,'IPRC/22F6B3','shyaka','leonce','shyakalee@gmail.com','0788704082',3,1,'0788704082',1),(2,'IPRC/221025','kalisa','amani','kalisa@gmail.com','0788454755',1,1,'0788454755',0),(3,'IPRC/229572','Igihozo','divine','divine@bk.rw','0788704254',1,1,'0788704254',1),(4,'IPRC/22F4C1','Umutesi','carine','carine@gmail.com','07446578465',3,1,'07446578465',1),(5,'IPRC/22B005','Test ','Student','student@gmail.com','0784131541',4,1,'0784131541',1),(7,'IPRC/2218E1','Umuraza','Evelyne','evelyne@gmail.com','0788945123',1,3,'0788945123',1);
+INSERT INTO `student` VALUES (1,'IPRC/229211','Kalisa','amani','kalisa@gmail.com','0789455412',1,1,'kalisa',1),(2,'IPRC/224E65','gashema','Hervin','hervin@gmail.com','07887045684',1,1,'07887045684',1),(3,'IPRC/22C893','James','Hilaire','james@gmail.com','0788469029',4,1,'james',1),(4,'IPRC/2256BA','Ruhumuriza','Janine','janine@gmail.com','0788956464',1,3,'0788956464',1),(5,'IPRC/22434F','ishimwe','alice','alice@gmail.com','0788845065',1,4,'0788845065',1),(6,'IPRC/228B6B','Gatabazi','Lionel','lionel@gmail.com','07845454564',4,1,'07845454564',1);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -291,4 +291,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-07 23:58:06
+-- Dump completed on 2022-03-17 15:21:03
