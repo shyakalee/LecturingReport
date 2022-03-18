@@ -22,7 +22,11 @@ class Add_course extends CI_Controller {
 		$c_lecture = $this->input->post('c_lecture');
 		$c_level = $this->input->post('c_level');
 		$c_credit = $this->input->post('c_credit');
-		$credit_data = array('name'=>$c_name,'credit'=>$c_credit,'lecture'=>$c_lecture,'depart'=>$c_depart,'level'=>$c_level,'active'=>1);
+
+		$start_date = $this->input->post('start_date');
+		$end_date = $this->input->post('end_date');
+
+		$credit_data = array('name'=>$c_name,'credit'=>$c_credit,'lecture'=>$c_lecture,'depart'=>$c_depart,'level'=>$c_level,'active'=>1, 'start_date'=>$start_date, 'end_date'=>$end_date);
 		if($this->us->save($credit_data,$id)){
 			$this->session->set_flashdata('sms_good','data saved well !');
 		}else{

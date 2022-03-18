@@ -34,9 +34,10 @@ class Lecture_model extends CI_Model {
 	}
 	public function get_all_course(){
 		$led_id = $this->session->userdata('User_Id');
+		$led_depart = $this->session->userdata('TheDepart');
 		return $this->db->select('course.id as c_id,course.name,course.credit,course.level')
 						->from('course')
-						->where(['course.active'=>1,'course.lecture'=>$led_id])
+						->where(['course.active'=>1,'course.lecture'=>$led_id, 'course.depart'=>$led_depart])
 						->get()
 						->result();
 	}
@@ -79,6 +80,21 @@ class Lecture_model extends CI_Model {
 			return $course_query->row();
 		}else{ return false;}
 	}*/
+
+	public function get_one_course($id){
+		$course_query = $this->db->select('course.id as c_id,course.name as c_name, course.depart as depart, course.credit as c_credit,course.level as c_level, course.start_date as start, course.end_date as end')
+						->from('course')
+						->where('course.id',$id)
+						//->join('student','course.depart = student.depart')
+						//->join('student','course.level = student.level')
+						->get();
+		if($course_query->num_rows()>0){
+			return $course_query->row();
+		}else{ return false;}
+	}
+
+
+
 	/*
 	public function get_all_course(){
 		$std_depart = $this->session->userdata('TheDepart');
@@ -170,5 +186,18 @@ class Lecture_model extends CI_Model {
 						->get()
 						->result();
 	}
+
+	public function get_all_schedules(){
+		$lecture_id = $this->session->userdata('User_Id');
+		return $this->db->select('notifications.lecture_id,notifications.course_id,notifications.level_id,notifications.type,notifications.depart_id,notifications.schedule, course.name as course_name')
+						->from('notifications')
+						->where('notifications.lecture_id' ,$lecture_id)
+						->join('course','course.id = notifications.course_id')
+						//->join('lecture','course.lecture = lecture.id')
+						->order_by('notifications.schedule','asc')
+						->get()
+						->result();
+	}
+
 
 }

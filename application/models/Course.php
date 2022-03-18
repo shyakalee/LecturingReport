@@ -15,7 +15,7 @@ class Course extends CI_Model {
 		return false;
 	}
 	public function get_all_course(){
-		return $this->db->select('course.id as c_id,course.name as c_name,course.credit,course.level,lecture.f_name,lecture.l_name,depart.name as d_name')
+		return $this->db->select('course.id as c_id,course.name as c_name,course.credit, course.start_date as start, course.end_date as end,course.level,lecture.f_name,lecture.l_name,depart.name as d_name')
 						->from('course')
 						->where('course.active',1)
 						->join('depart','course.depart = depart.id')

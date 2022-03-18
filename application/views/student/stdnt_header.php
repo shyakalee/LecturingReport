@@ -24,6 +24,19 @@
 				<li><a href="<?php echo base_url('Student/announcement')?>"><span class="glyphicon glyphicon-list-alt"></span> Announcements</a></li>
 				<li><a href="<?php echo base_url('Student/post_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Posted list</a></li>
 				<li><a href="<?php echo base_url('Student/course_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Course list</a></li>
+
+				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"> </span> My Notifs.<?php echo ' [8]'?></a>
+					<ul class="dropdown-menu">
+						<li class="user-header text-center">
+														
+							<a href="#" class="">student</a><hr/>
+							<a href="#" class="">student</a><hr/>
+							<a href="#" class="">student</a><hr/>
+							
+						</li>						
+					</ul>
+				</li>
+
 				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $fname; ?></a>
 					<ul class="dropdown-menu">
 						<li class="user-header text-center">

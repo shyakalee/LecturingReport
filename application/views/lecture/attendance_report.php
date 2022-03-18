@@ -96,10 +96,8 @@
 									</div>
 								</div>
 							</div>
-
 												
 							<button name="send_values" class="btn btn-">Submit Datas</button><p></p>
-							
 					
 						<div class="table-responsive table-full-width form-add-project">
 							<table class="table table-striped table-hover display"  id="example"> <!-- hover -->

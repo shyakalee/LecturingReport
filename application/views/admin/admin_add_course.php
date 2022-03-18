@@ -69,7 +69,7 @@
 							</div>
 							<div class="form-group">
 								<div class="row">
-									<div class="col-sm-5">
+									<div class="col-sm-3">
 										<label for="name">Lecture</label>
 										<select class="form-control" name="c_lecture">
 											<?php
@@ -84,6 +84,14 @@
 									<div class="col-sm-3">
 										<label for="name">Credit</label>
 										<input type="number" name="c_credit" value="<?php echo $one_course->credit; ?>" class="form-control" placeholder="Type here ..." required />
+									</div>
+									<div class="col-sm-3">
+										<label for="name">Start on</label>
+										<input type="date" name="start_date" value="<?php echo $one_course->start; ?>" class="form-control" required />
+									</div>
+									<div class="col-sm-3">
+										<label for="name">End on</label>
+										<input type="date" name="end_date" value="<?php echo $one_course->end; ?>" class="form-control" required />
 									</div>
 								</div>
 							</div>

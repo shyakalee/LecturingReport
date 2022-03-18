@@ -16,6 +16,12 @@ class Student extends CI_Controller{
 		$std_depart = $this->session->userdata('TheDepart');
 		$level = $this->session->userdata('TheLevel');
 		$data['all_announce'] = $this->us->get_all_announce();
+
+		// =========== all notifications ========================
+		$data['all_notifs'] = $this->us->get_all_notifications();
+		// ======================================================
+
+
 		$data['lecturing_no'] = $this->us->count_lecturing($login_id);
 		$data['course_no'] = $this->us->count_course($std_depart,$level);
 		$data['anou_no'] = $this->us->count_announce($std_depart,$level);

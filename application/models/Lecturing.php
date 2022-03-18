@@ -13,6 +13,18 @@ class Lecturing extends CI_Model {
 		}
 		return false;
 	}
+// ============ returning all notifications per students ================
+	public function get_all_notifications(){
+		$std_depart = $this->session->userdata('TheDepart');
+		$std_level = $this->session->userdata('TheLevel');
+		return $this->db->select('announce.id as anou_id,announce.title,announce.content,announce.level,announce.date_time,leader.f_name,leader.l_name')
+						->from('announce')
+						->where(['announce.active'=>1,'announce.depart_id'=>$std_depart])
+						->join('leader','announce.leader_id=leader.id')
+						->get()
+						->result();
+	}
+// ===================================================================
 	public function get_all_lecturing(){
 		return $this->db->select('lecturing.id as l_id,lecturing.date_time,lecturing.duration,lecturing.content,lecture.f_name as le_fname,lecture.l_name as le_lname,lecture.degree,lecture.email as le_email,course.id,course.name')
 						->from('lecturing')

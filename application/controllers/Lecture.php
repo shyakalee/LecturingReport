@@ -5,8 +5,8 @@ class Lecture extends CI_Controller{
 	public function __construct(){
 		
 		parent::__construct();
-		$this->load->model('Lecture_model','us');
-
+		$this->load->model('Lecture_model','us');		
+		
 		$Admin_Access = $this->session->userdata('Admin_Access');
 		if(!isset($Admin_Access))
 			redirect('Login');
@@ -51,15 +51,16 @@ class Lecture extends CI_Controller{
 		redirect('Lecture/lecturing_list');
 	}
 	public function course_list(){
+		// $login_id = $this->session->userdata('User_Id');
+		// $lect_depart = $this->session->userdata('TheDepart');
+		// $data['all_lecturing'] = $this->us->all_lecturing($login_id,$lect_depart);
+		$data['all_schedules']=$this->us->get_all_schedules();
 		$data['all_course'] = $this->us->get_all_course();
 		$this->load->view('lecture/course_list',$data);
 	}
-	/*public function course_details($id){
-		$data['all_course'] = $this->us->get_all_course();
-		$data['one_cour'] = $this->us->get_one_course($id);
-		$data['read_more'] = 'more_on_course.php';
-		$this->load->view('lecture/course_list',$data);
-	}*/
+
+	
+
 	public function student_list(){
 		$data['all_student'] = $this->us->get_all_student();
 		$this->load->view('lecture/student_list',$data);
@@ -100,7 +101,13 @@ class Lecture extends CI_Controller{
 		$this->load->view('Lecture/attendance',$data);
 	}
 
-
+	// set exam and cat schedules
+	public function course_details($id){
+		
+		$data['one_cour'] = $this->us->get_one_course($id);
+		$data['read_more'] = 'more_on_course.php';
+		$this->load->view('lecture/course_details',$data);
+	}
 
 
 
