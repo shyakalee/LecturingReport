@@ -6,59 +6,79 @@ class Student extends CI_Controller{
 		
 		parent::__construct();
 		$this->load->model('Lecturing','us');
+		$this->load->model('Student','us');
+		$this->load->model('Notification','us');
 
 		$Admin_Access = $this->session->userdata('Admin_Access');
 		if(!isset($Admin_Access))
 			redirect('Login');
 	}
 	public function index(){
+		// ============== load notifications ================
+		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+		$data['notifications']=$this->us->count_notifs();
 		$login_id = $this->session->userdata('User_Id');
 		$std_depart = $this->session->userdata('TheDepart');
 		$level = $this->session->userdata('TheLevel');
 		$data['all_announce'] = $this->us->get_all_announce();
-
-		// =========== all notifications ========================
-		$data['all_notifs'] = $this->us->get_all_notifications();
-		// ======================================================
-
-
 		$data['lecturing_no'] = $this->us->count_lecturing($login_id);
 		$data['course_no'] = $this->us->count_course($std_depart,$level);
 		$data['anou_no'] = $this->us->count_announce($std_depart,$level);
 		$this->load->view('student/home',$data);
 	}
 	public function post_lecturing(){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
 		$data['all_course'] = $this->us->get_all_course();
 		$data['all_lecture'] = $this->us->get_all_lecture();
 		$this->load->view('student/post_lecturing',$data);
 	}
 	public function announcement(){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_announce'] = $this->us->get_all_announce();
 		$this->load->view('student/announcement',$data);
 	}
 	public function see_announce($id){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_announce'] = $this->us->get_all_announce();
 		$data['one_anou'] = $this->us->get_one_announce($id);
 		$data['more_on_announce'] = 'more_on_announce.php';
 		$this->load->view('student/announcement',$data);
 	}
 	public function post_list(){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
 		$this->load->view('student/post_list',$data);
 	}
 	public function course_list()
 	{
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_course'] = $this->us->get_all_course();
 		$this->load->view('student/course_list',$data);
 	}
 	public function settings()
 	{
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$login_id = $this->session->userdata('User_Id');
 		$data['std_me'] = $this->us->get_user_loged($login_id);
 		$this->load->view('student/settings',$data);
 	}
 	public function edit_me(){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$std_id = $this->session->userdata('User_Id');
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -79,6 +99,9 @@ class Student extends CI_Controller{
 		redirect('Student/settings');
 	}
 	public function add($id=''){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$std_depart = $this->session->userdata('TheDepart');
 		$course = $this->input->post('course');
 		$date_time = $this->input->post('date_time');
@@ -97,6 +120,9 @@ class Student extends CI_Controller{
 		redirect('Student/post_lecturing');
 	}
 	public function see_more($id){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
 		$data['all_course'] = $this->us->get_all_course();
 		$data['all_lecture'] = $this->us->get_all_lecture();
@@ -105,12 +131,18 @@ class Student extends CI_Controller{
 		$this->load->view('student/post_lecturing',$data);
 	}
 	public function edit_lecturing($id){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
 		$data['all_course'] = $this->us->get_all_course();
 		$data['one_data'] = $this->us->get_one_lecturing($id);
 		$this->load->view('student/post_lecturing',$data);
 	}
 	public function delete($id){
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
 		if($this->us->delete_lecturing($id)){
 			$this->session->set_flashdata('sms_good','Lecturing deleted well !');
 		}else{
@@ -119,6 +151,9 @@ class Student extends CI_Controller{
 		redirect('Student/post_lecturing');
 	}
 	public function send_lecturing($id){
+			// ============== load notifications ================
+		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+		$data['notifications']=$this->us->count_notifs();
 		if($this->us->send_lecturing($id)){
 			$this->session->set_flashdata('sms_good','Lecturing has been sent well !');
 		}else{
@@ -127,18 +162,37 @@ class Student extends CI_Controller{
 		redirect('Student/post_lecturing');
 	}
 	public function post_details($id){
+			// ============== load notifications ================
+		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+		$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
 		$data['one_le'] = $this->us->get_one_lecturing($id);
 		$data['read_more'] = 'more_on_lecturing.php';
 		$this->load->view('student/post_list',$data);
 	}
 	public function course_details($id){
+			// ============== load notifications ================
+		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+		$data['notifications']=$this->us->count_notifs();
 		$data['all_course'] = $this->us->get_all_course();
 		$data['one_cour'] = $this->us->get_one_course($id);
 		$data['read_more'] = 'more_on_course.php';
 		$this->load->view('student/course_list',$data);
 	}
 	public function print_lecturing(){
+			// ============== load notifications ================
+		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+		$data['notifications']=$this->us->count_notifs();
 		$this->load->view('student/report_lecturing');
+	}
+
+	public function notification_details($id) {
+			// ============== load notifications ================
+			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
+			$data['notifications']=$this->us->count_notifs();
+
+			$data['notif_details']=$this->us->get_notification_details($id);
+			$data['read_more'] = 'more_on_course.php';
+			$this->load->view('student/notification_details',$data);
 	}
 }

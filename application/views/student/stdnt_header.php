@@ -21,17 +21,23 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="<?php echo base_url('Student')?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li><a href="<?php echo base_url('Student/post_lecturing')?>"><span class="glyphicon glyphicon-plus"></span> Post lecturing</a></li>
-				<li><a href="<?php echo base_url('Student/announcement')?>"><span class="glyphicon glyphicon-list-alt"></span> Announcements</a></li>
+				<li><a href="<?php echo base_url('Student/announcement')?>"><span class="glyphicon glyphicon-list-alt"></span> Announc.</a></li>
 				<li><a href="<?php echo base_url('Student/post_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Posted list</a></li>
 				<li><a href="<?php echo base_url('Student/course_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Course list</a></li>
 
-				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"> </span> My Notifs.<?php echo ' [8]'?></a>
+				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"> </span> My Notifs. [<?php  echo $notifications ?>]</a>
 					<ul class="dropdown-menu">
-						<li class="user-header text-center">
-														
-							<a href="#" class="">student</a><hr/>
-							<a href="#" class="">student</a><hr/>
-							<a href="#" class="">student</a><hr/>
+						<li class="user-footer text-center">			
+							<div class="text-center">
+								<?php
+								if(count($all_notifs)>0){
+									$i=1;
+									foreach($all_notifs as $notification){
+								?>
+								<a href="<?php echo base_url('Student/notification_details/'.$notification->id)?>" class="">(<?php echo $notification->type ?>):: on <?php echo $notification->schedule ?></a><hr>						
+								<?php }} ?> 
+								
+							</div>
 							
 						</li>						
 					</ul>
