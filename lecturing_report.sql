@@ -89,7 +89,7 @@ CREATE TABLE `attendance` (
   `in_time` varchar(100) NOT NULL,
   `status` tinyint(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (1,'IPRC/229211','1','1','2022-03-17',0),(2,'IPRC/224E65','1','1','2022-03-17',0),(3,'IPRC/2256BA','1','1','2022-03-17',2),(4,'IPRC/22434F','1','1','2022-03-17',2);
+INSERT INTO `attendance` VALUES (1,'IPRC/229211','1','1','2022-03-17',0),(2,'IPRC/224E65','1','1','2022-03-17',0),(3,'IPRC/2256BA','1','1','2022-03-17',2),(4,'IPRC/22434F','1','1','2022-03-17',2),(5,'IPRC/22C893','4','4','2022-03-17',0),(6,'IPRC/228B6B','4','4','2022-03-17',1),(7,'IPRC/229211','2','1','2022-03-17',0),(8,'IPRC/224E65','2','1','2022-03-17',1),(9,'IPRC/2256BA','2','1','2022-03-17',2),(10,'IPRC/22434F','2','1','2022-03-17',1),(11,'IPRC/2256BA','1','1','2022-03-17',1),(12,'IPRC/229211','1','1','2022-03-17',0),(13,'IPRC/224E65','1','1','2022-03-17',2),(14,'IPRC/22434F','1','1','2022-03-16',1);
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,8 +117,10 @@ CREATE TABLE `course` (
   `depart` bigint(10) NOT NULL,
   `level` int(1) NOT NULL,
   `active` int(1) NOT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +129,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1),(2,'Computer Graphic',10,4,2,1,1),(3,'GIS info',10,1,1,1,1),(4,'Web Design',10,1,1,2,1),(5,'Local Financial',10,1,3,2,1),(6,'Digital circuit',10,1,4,1,1),(7,'Database Management System',10,1,1,2,1),(8,'Test Git Course',15,1,4,4,1);
+INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1,NULL,NULL),(2,'Computer Graphic',10,4,1,1,1,NULL,NULL),(3,'GIS info',10,1,1,1,1,NULL,NULL),(4,'Web Design',10,1,1,1,1,NULL,NULL),(5,'Local Financial',10,1,3,2,1,NULL,NULL),(6,'Digital circuit',10,1,4,1,1,NULL,NULL),(7,'Database Management System',10,1,1,2,1,NULL,NULL),(8,'Test Git Course',15,1,4,4,1,NULL,NULL),(9,'Introduction to Computer',25,4,4,2,1,NULL,NULL),(10,'Statistics',25,1,1,1,1,'2022-03-18','2022-03-28');
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,7 +239,7 @@ CREATE TABLE `lecturing` (
   `comment` varchar(500) CHARACTER SET utf8 NOT NULL,
   `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -246,8 +248,38 @@ CREATE TABLE `lecturing` (
 
 LOCK TABLES `lecturing` WRITE;
 /*!40000 ALTER TABLE `lecturing` DISABLE KEYS */;
-INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4),(5,1,2,7,'2022-03-16T13:45','3','Yigishije fresh kbsa, No porobleme','That\'s great',4);
+INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4),(5,1,2,7,'2022-03-16T13:45','3','Yigishije fresh kbsa, No porobleme','That\'s great',4),(6,1,1,4,'2022-03-17T14:58','3','Web design yawe ni bon kbsa,\r\nWe appreciate all rwosee..\r\n','',1),(7,1,1,3,'2022-03-18T04:00','3','Testing Posting here description','',1);
 /*!40000 ALTER TABLE `lecturing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notifications` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `lecture_id` int(10) DEFAULT NULL,
+  `course_id` int(10) DEFAULT NULL,
+  `level_id` int(10) DEFAULT NULL,
+  `type` varchar(100) NOT NULL,
+  `depart_id` int(10) DEFAULT NULL,
+  `schedule` date DEFAULT NULL,
+  `comment` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+INSERT INTO `notifications` VALUES (1,1,10,1,'exam',1,'2022-03-16','test'),(2,1,1,1,'cat',1,'2022-03-30','testing notif'),(3,1,1,1,'cat',1,'2022-03-30','testing notif'),(4,1,7,2,'exam',1,'2022-03-31','test exam na cat'),(5,1,4,1,'exam',1,'2022-03-21','Be sure to bring your id cards'),(6,1,1,2,'exam',1,'2022-03-22','Bring your last question papers'),(7,1,4,1,'cat',1,'2022-03-22','Respects to bring your own laptop for coding,\r\n'),(8,4,9,2,'exam',4,'2022-04-20','Hey, April notifications description goes here..'),(9,1,10,1,'exam',1,'2022-03-23','Muzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee');
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -291,4 +323,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-17 15:21:03
+-- Dump completed on 2022-03-19  4:22:15
