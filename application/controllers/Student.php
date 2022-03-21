@@ -15,6 +15,8 @@ class Student extends CI_Controller{
 	}
 	public function index(){
 		// ============== load notifications ================
+		$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 		$data['notifications']=$this->us->count_notifs();
 		$login_id = $this->session->userdata('User_Id');
@@ -28,6 +30,8 @@ class Student extends CI_Controller{
 	}
 	public function post_lecturing(){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
@@ -37,6 +41,8 @@ class Student extends CI_Controller{
 	}
 	public function announcement(){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_announce'] = $this->us->get_all_announce();
@@ -44,6 +50,8 @@ class Student extends CI_Controller{
 	}
 	public function see_announce($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_announce'] = $this->us->get_all_announce();
@@ -53,6 +61,8 @@ class Student extends CI_Controller{
 	}
 	public function post_list(){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
@@ -61,6 +71,8 @@ class Student extends CI_Controller{
 	public function course_list()
 	{
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_course'] = $this->us->get_all_course();
@@ -69,6 +81,8 @@ class Student extends CI_Controller{
 	public function settings()
 	{
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$login_id = $this->session->userdata('User_Id');
@@ -77,6 +91,8 @@ class Student extends CI_Controller{
 	}
 	public function edit_me(){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$std_id = $this->session->userdata('User_Id');
@@ -100,6 +116,8 @@ class Student extends CI_Controller{
 	}
 	public function add($id=''){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$std_depart = $this->session->userdata('TheDepart');
@@ -121,6 +139,8 @@ class Student extends CI_Controller{
 	}
 	public function see_more($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
@@ -132,6 +152,8 @@ class Student extends CI_Controller{
 	}
 	public function edit_lecturing($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
@@ -141,6 +163,8 @@ class Student extends CI_Controller{
 	}
 	public function delete($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 		if($this->us->delete_lecturing($id)){
@@ -152,6 +176,8 @@ class Student extends CI_Controller{
 	}
 	public function send_lecturing($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 		$data['notifications']=$this->us->count_notifs();
 		if($this->us->send_lecturing($id)){
@@ -163,6 +189,8 @@ class Student extends CI_Controller{
 	}
 	public function post_details($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 		$data['notifications']=$this->us->count_notifs();
 		$data['all_lecturing'] = $this->us->get_all_lecturing();
@@ -172,6 +200,8 @@ class Student extends CI_Controller{
 	}
 	public function course_details($id){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 		$data['notifications']=$this->us->count_notifs();
 		$data['all_course'] = $this->us->get_all_course();
@@ -181,6 +211,8 @@ class Student extends CI_Controller{
 	}
 	public function print_lecturing(){
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 		$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 		$data['notifications']=$this->us->count_notifs();
 		$this->load->view('student/report_lecturing');
@@ -188,6 +220,8 @@ class Student extends CI_Controller{
 
 	public function notification_details($id) {
 			// ============== load notifications ================
+			$depart_id = $this->session->userdata('TheDepart');
+		$level_id = $this->session->userdata('TheLevel');
 			$data['all_notifs']=$this->us->get_all_notifications($depart_id, $level_id);
 			$data['notifications']=$this->us->count_notifs();
 

@@ -16,7 +16,7 @@ class Lecturing extends CI_Model {
 
 			// ============ returning all notifications per students ================
 			public function get_all_notifications($depart_id, $level_id){
-				$depart_id = $this->session->userdata('User_Id');
+				$depart_id = $this->session->userdata('TheDepart');
 				$level_id = $this->session->userdata('TheLevel');
 				return $this->db->select('notifications.id, notifications.lecture_id, notifications.course_id, course.name as course_name, notifications.level_id, notifications.type, notifications.schedule, notifications.comment')
 								->from('notifications')
@@ -28,20 +28,20 @@ class Lecturing extends CI_Model {
 								->result();
 			}
 			public function count_notifs(){
-				$depart_id = $this->session->userdata('User_Id');
+				$depart_id = $this->session->userdata('TheDepart');
 				$level_id = $this->session->userdata('TheLevel');
 				$query_count = $this->db->query('select * from notifications where depart_id='.$depart_id.' AND level_id='.$level_id.' order by schedule desc');
 				return $query_count->num_rows();
 			}
 
 			public function get_notification_details($id){
-				$depart_id = $this->session->userdata('User_Id');
+				$depart_id = $this->session->userdata('TheDepart');
 				$level_id = $this->session->userdata('TheLevel');
 				$id=$id;
-				return $this->db->select('notifications.id,depart.name as depart_name, notifications.lecture_id, lecture.f_name as lecture_name, lecture.l_name as lecture_lname, , notifications.course_id, course.name as course_name, notifications.level_id, notifications.type, notifications.schedule, notifications.comment as comment')
+				return $this->db->select('notifications.id as notif_id,depart.name as depart_name, notifications.lecture_id, lecture.f_name as lecture_name, lecture.l_name as lecture_lname, , notifications.course_id, course.name as course_name, notifications.level_id, notifications.type, notifications.schedule, notifications.comment as comment')
 								->from('notifications')
 								->where(['notifications.depart_id'=>$depart_id, 'notifications.level_id'=>$level_id, 'notifications.id'=>$id])
-								->join('course','course.id = notifications.id')
+								->join('course','course.id = notifications.course_id')
 								->join('lecture','lecture.id = notifications.lecture_id')
 								->join('depart','depart.id = notifications.depart_id')
 								->get()

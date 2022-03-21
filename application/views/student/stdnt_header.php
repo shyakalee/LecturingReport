@@ -25,16 +25,15 @@
 				<li><a href="<?php echo base_url('Student/post_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Posted list</a></li>
 				<li><a href="<?php echo base_url('Student/course_list')?>"><span class="glyphicon glyphicon-list-alt"></span> Course list</a></li>
 
-				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"> </span> My Notifs. [<?php  echo $notifications ?>]</a>
+				<li class="dropdown user-dialog"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-bell"> </span> My Notifs. <p class="badge"><?php  echo $notifications ?></p></a>
 					<ul class="dropdown-menu">
 						<li class="user-footer text-center">			
 							<div class="text-center">
 								<?php
 								if(count($all_notifs)>0){
-									$i=1;
 									foreach($all_notifs as $notification){
 								?>
-								<a href="<?php echo base_url('Student/notification_details/'.$notification->id)?>" class="">(<?php echo $notification->type ?>):: on <?php echo $notification->schedule ?></a><hr>						
+								<a href="<?php echo base_url('Student/notification_details/'.$notification->id)?>" class="#">(<?php echo $notification->type ?>):: on <?php echo $notification->schedule ?></a><hr>						
 								<?php }} ?> 
 								
 							</div>
