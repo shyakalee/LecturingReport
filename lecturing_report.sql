@@ -129,7 +129,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1,NULL,NULL),(2,'Computer Graphic',10,4,1,1,1,NULL,NULL),(3,'GIS info',10,1,1,1,1,NULL,NULL),(4,'Web Design',10,1,1,1,1,NULL,NULL),(5,'Local Financial',10,1,3,2,1,NULL,NULL),(6,'Digital circuit',10,1,4,1,1,NULL,NULL),(7,'Database Management System',10,1,1,2,1,NULL,NULL),(8,'Test Git Course',15,1,4,4,1,NULL,NULL),(9,'Introduction to Computer',25,4,4,2,1,NULL,NULL),(10,'Statistics',25,1,1,1,1,'2022-03-18','2022-03-28');
+INSERT INTO `course` VALUES (1,'C++',10,1,1,2,1,NULL,NULL),(2,'Computer Graphic',10,4,4,4,1,'2022-03-21','2022-04-29'),(3,'GIS info',10,1,1,1,1,NULL,NULL),(4,'Web Design',10,1,1,1,1,NULL,NULL),(5,'Local Financial',10,1,3,2,1,NULL,NULL),(6,'Digital circuit',10,1,4,1,1,NULL,NULL),(7,'Database Management System',10,1,1,2,1,NULL,NULL),(8,'Test Git Course',15,2,3,3,1,'2022-03-21','2022-07-29'),(9,'Introduction to Computer',25,4,4,2,1,NULL,NULL),(10,'Statistics',25,1,1,1,1,'2022-03-18','2022-03-28');
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +155,7 @@ CREATE TABLE `depart` (
 
 LOCK TABLES `depart` WRITE;
 /*!40000 ALTER TABLE `depart` DISABLE KEYS */;
-INSERT INTO `depart` VALUES (1,'Computer Science',4,1),(2,'Information Technology',4,1),(3,'Information Management System',4,1),(4,'Computer Engineering',1,1),(5,'Test Departm',1,1);
+INSERT INTO `depart` VALUES (1,'Computer Science',4,1),(2,'Information Technology',4,1),(3,'Information Management System',3,1),(4,'Computer Engineering',1,1),(5,'Test Departm',1,1);
 /*!40000 ALTER TABLE `depart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +217,7 @@ CREATE TABLE `lecture` (
 
 LOCK TABLES `lecture` WRITE;
 /*!40000 ALTER TABLE `lecture` DISABLE KEYS */;
-INSERT INTO `lecture` VALUES (1,'Mr','GAHAMANYI','Joseph','joseph@gmail.com','1234','1234','M',1,1),(2,'Prof','Ntaganda','Jean Marie','ntaganda@gmail.com','123','123','M',1,1),(3,'Mrs','koko','keke','koko@gmail.com','0788668','0788668','F',4,1),(4,'Mr','shyaka','leonce','shyakalee@gmail.com','0788704082','0788704082','M',4,1),(5,'Mr','test','test','kalisa@gmail.com','0788704082','0788704082','F',1,1);
+INSERT INTO `lecture` VALUES (1,'Mr','GAHAMANYI','Joseph','joseph@gmail.com','1234','1234','M',1,1),(2,'Mr','Ntaganda','Jean Marie','ntaganda@gmail.com','123','123','M',3,1),(3,'Mrs','koko','keke','koko@gmail.com','0788668','0788668','F',4,1),(4,'Mr','shyaka','leonce','shyakalee@gmail.com','0788704082','0788704082','M',4,1),(5,'Mr','test','test','kalisa@gmail.com','0788704082','0788704082','F',1,1);
 /*!40000 ALTER TABLE `lecture` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,7 +239,7 @@ CREATE TABLE `lecturing` (
   `comment` varchar(500) CHARACTER SET utf8 NOT NULL,
   `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +248,7 @@ CREATE TABLE `lecturing` (
 
 LOCK TABLES `lecturing` WRITE;
 /*!40000 ALTER TABLE `lecturing` DISABLE KEYS */;
-INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4),(5,1,2,7,'2022-03-16T13:45','3','Yigishije fresh kbsa, No porobleme','That\'s great',4),(6,1,1,4,'2022-03-17T14:58','3','Web design yawe ni bon kbsa,\r\nWe appreciate all rwosee..\r\n','',1),(7,1,1,3,'2022-03-18T04:00','3','Testing Posting here description','',1);
+INSERT INTO `lecturing` VALUES (1,1,1,1,'2018-04-10T07:0','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','',1),(2,1,1,7,'2018-05-20T08:30','3h','It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability. It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovative products at competitive prices without compromising strength and reliability It\'s our goal to be the first in the market to bring you innovat','gghh',2),(3,1,1,4,'2018-08-15T08:30','3h','By the observation, the researcher notes by his/her own eyes what is done in reality.   It can bring some modifications on the results got by other techniques. \r\n\r\nCat on /20','No Comment !',4),(4,1,1,4,'2022-02-15T09:00','5','test lecturing from student','asante',4),(5,1,2,7,'2022-03-16T13:45','3','Yigishije fresh kbsa, No porobleme','That\'s great',4),(6,1,1,4,'2022-03-17T14:58','3','Web design yawe ni bon kbsa,\r\nWe appreciate all rwosee..\r\n','',1),(7,1,1,3,'2022-03-18T04:00','3','Testing Posting here description','',1),(8,4,5,9,'2022-03-22T15:24','2.5','This is for sleon lectures approval','',1);
 /*!40000 ALTER TABLE `lecturing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +269,7 @@ CREATE TABLE `notifications` (
   `schedule` date DEFAULT NULL,
   `comment` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +278,7 @@ CREATE TABLE `notifications` (
 
 LOCK TABLES `notifications` WRITE;
 /*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
-INSERT INTO `notifications` VALUES (1,1,10,1,'exam',1,'2022-03-16','test'),(2,1,1,1,'cat',1,'2022-03-30','testing notif'),(3,1,1,1,'cat',1,'2022-03-30','testing notif'),(4,1,7,2,'exam',1,'2022-03-31','test exam na cat'),(5,1,4,1,'exam',1,'2022-03-21','Be sure to bring your id cards'),(6,1,1,2,'exam',1,'2022-03-22','Bring your last question papers'),(7,1,4,1,'cat',1,'2022-03-22','Respects to bring your own laptop for coding,\r\n'),(8,4,9,2,'exam',4,'2022-04-20','Hey, April notifications description goes here..'),(9,1,10,1,'exam',1,'2022-03-23','Muzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee\r\nMuzazane calculator mwesee');
+INSERT INTO `notifications` VALUES (1,4,9,2,'cat',4,'2022-03-23','Click on the product category below, then select the specific product you are interested in from the options shown. From there you will see our available courses organized by Fundamentals, Professiona'),(2,2,8,3,'exam',3,'2022-03-24','When faculty senior Anastasia Steele steps set for her sick roommate to interview business man Christian Grey for their own campus paper, little does she realize. Christian, as amazing as he is rich a'),(3,1,3,1,'cat',1,'2022-03-31','TOP STORIES FOR SHYAKA\n\nQuora\n \nIf I get pregnant in Canada under a student visa, does that allow me to stay permanently?\nGerry U • Answered December 18\n\nHaving a child in Canada while here on '),(4,1,10,1,'exam',1,'2022-03-30','Interested in learning more about the value of the #Mojaloop Training Program and the new courses that are available? Join us on March 31, @ 9:00 AM ET, for a Webinar to hear from our leading course c');
 /*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,7 +310,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'IPRC/229211','Kalisa','amani','kalisa@gmail.com','0789455412',1,1,'kalisa',1),(2,'IPRC/224E65','gashema','Hervin','hervin@gmail.com','07887045684',1,1,'07887045684',1),(3,'IPRC/22C893','James','Hilaire','james@gmail.com','0788469029',4,1,'james',1),(4,'IPRC/2256BA','Ruhumuriza','Janine','janine@gmail.com','0788956464',1,3,'0788956464',1),(5,'IPRC/22434F','ishimwe','alice','alice@gmail.com','0788845065',1,4,'0788845065',1),(6,'IPRC/228B6B','Gatabazi','Lionel','lionel@gmail.com','07845454564',4,1,'07845454564',1);
+INSERT INTO `student` VALUES (1,'IPRC/229211','Kalisa','amani','kalisa@gmail.com','0789455412',1,1,'kalisa',1),(2,'IPRC/224E65','gashema','Hervin','hervin@gmail.com','07887045684',1,1,'07887045684',1),(3,'IPRC/22C893','James','Hilaire','james@gmail.com','0788469029',4,1,'james',1),(4,'IPRC/22D97A','Ruhumuriza','Janine','janine@gmail.com','0788956464',3,3,'0788956464',1),(5,'IPRC/22C3A8','ishimwe','alice','alice@gmail.com','0788845065',4,2,'0788845065',1),(6,'IPRC/22D1F3','Gatabazi','Lionel','lionel@gmail.com','07845454564',4,1,'07845454564',1);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -323,4 +323,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-19  4:22:15
+-- Dump completed on 2022-03-21 16:34:21
